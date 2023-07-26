@@ -1,0 +1,14 @@
+{
+  "_comment": "Item Groups",
+  "itemGroup.testItemGroup": "ItemGroup",
+  "itemGroup.testToolGroup": "ToolGroup",
+  "itemGroup.testBlockGroup": "BlockGroup",
+  "_comment": "Item",
+  "item.nmod.test": "testItem",
+  "item.nmod.testsword": "testSword",
+  "item.nmod.testhoe": "testHoe",
+  "item.nmod.testpickaxe": "testPickaxe",
+  "item.nmod.testshovel": "testShovel",
+  "item.nmod.testaxe": "testAxe",
+  "block.nmod.testblock": "testBlock"
+}

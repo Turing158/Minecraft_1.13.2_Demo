@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " e ",
+    " e ",
+    " t "
+  ],
+  "key": {
+    "e": {
+      "item": "nmod:test"
+    },
+    "t": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "nmod:testsword"
+  }
+}

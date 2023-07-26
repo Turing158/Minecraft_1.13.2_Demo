@@ -1,0 +1,14 @@
+{
+  "_comment": "Item Groups",
+  "itemGroup.testItemGroup": "物品",
+  "itemGroup.testToolGroup": "工具",
+  "itemGroup.testBlockGroup": "方块",
+  "_comment": "Item",
+  "item.nmod.test": "测试物品",
+  "item.nmod.testsword": "测试剑",
+  "item.nmod.testhoe": "测试锄头",
+  "item.nmod.testpickaxe": "测试镐子",
+  "item.nmod.testshovel": "测试锹",
+  "item.nmod.testaxe": "测试斧头",
+  "block.nmod.testblock": "测试方块"
+}

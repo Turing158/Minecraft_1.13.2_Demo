@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " x ",
+    " e ",
+    " e "
+  ],
+  "key": {
+    "x": {
+      "item": "nmod:test"
+    },
+    "e": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "nmod:testshovel"
+  }
+}
