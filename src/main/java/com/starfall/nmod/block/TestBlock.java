@@ -16,14 +16,19 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
+//创建方块示例
+//继承Block类
 public class TestBlock extends Block {
+    //设置方块全局变量名[方便添加物品]
     public static final String NAME = "nmod:testblock";
+    //构造函数
     public TestBlock(){
-        super(Properties.create(Material.WOOD)
-                .hardnessAndResistance(1.0f)
-                .lightValue(14)
+        //调用父类构造函数
+        super(Properties.create(Material.WOOD)//设置方块材质[不是纹理材质]
+                .hardnessAndResistance(1.0f)//设置硬度和抗爆
+                .lightValue(14)//设置亮度
         );
-        setRegistryName(NAME);
+        setRegistryName(NAME);//设置方块注册名
     }
 
 }
