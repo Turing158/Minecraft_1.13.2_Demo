@@ -8,24 +8,24 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-//åˆ›å»ºç‰©å“ç¤ºä¾‹
-//ç»§æ‰¿Itemç±»
+//´´½¨ÎïÆ·Ê¾Àı
+//¼Ì³ĞItemÀà
 public class Test extends Item {
-    //æ„é€ å‡½æ•°
+    //¹¹Ôìº¯Êı
     public Test() {
-        //è°ƒç”¨çˆ¶ç±»æ„é€ å‡½æ•°
-        //è¿™é‡Œä½¿ç”¨ Item.Properties() åˆ›å»ºç‰©å“å±æ€§
+        //µ÷ÓÃ¸¸Àà¹¹Ôìº¯Êı
+        //ÕâÀïÊ¹ÓÃ Item.Properties() ´´½¨ÎïÆ·ÊôĞÔ
         super(new Item.Properties()
-                .maxStackSize(16)//è®¾ç½®æœ€å¤§å †å æ•°é‡
-                .group(TestItemGroup.TEST_ITEM_GROUP)//è®¾ç½®ç‰©å“ç»„
+                .maxStackSize(16)//ÉèÖÃ×î´ó¶ÑµşÊıÁ¿
+                .group(TestItemGroup.TEST_ITEM_GROUP)//ÉèÖÃÎïÆ·×é
         );
-        setRegistryName("nmod:test");//è®¾ç½®ç‰©å“æ³¨å†Œå
+        setRegistryName("nmod:test");//ÉèÖÃÎïÆ·×¢²áÃû
 
     }
 
 
-    //é‡å†™ onItemRightClick æ–¹æ³•
-    //è¿™ä¸ªæ–¹æ³•æ˜¯å³é”®ç‚¹å‡»ç‰©å“çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+    //ÖØĞ´ onItemRightClick ·½·¨
+    //Õâ¸ö·½·¨ÊÇÓÒ¼üµã»÷ÎïÆ·µÄÊ±ºò´¥·¢µÄ·½·¨
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         return super.onItemRightClick(worldIn, playerIn, handIn);

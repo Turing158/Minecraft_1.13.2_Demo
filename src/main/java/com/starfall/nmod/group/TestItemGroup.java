@@ -12,24 +12,24 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 
-//åˆ›å»ºç‰©å“ç»„ç¤ºä¾‹[ä¾‹å¦‚ï¼šæ–¹å—æ”¾åœ¨å“ªä¸ªç‰©å“ç»„ï¼Œç‰©å“æ”¾åœ¨å“ªä¸ªç‰©å“ç»„......]
-//ç»§æ‰¿ItemGroupç±»[é‡ç‚¹è¿™ä¸ªç±»æ˜¯æŠ½è±¡ç±»]
+//´´½¨ÎïÆ·×éÊ¾Àı[ÀıÈç£º·½¿é·ÅÔÚÄÄ¸öÎïÆ·×é£¬ÎïÆ··ÅÔÚÄÄ¸öÎïÆ·×é......]
+//¼Ì³ĞItemGroupÀà[ÖØµãÕâ¸öÀàÊÇ³éÏóÀà]
 public abstract class TestItemGroup extends ItemGroup {
 
-    //åˆ›å»ºç‰©å“ç»„ç¤ºä¾‹
-    //é€šè¿‡é™æ€å…¨å±€å˜é‡ new ä¸€ä¸ªç‰©å“ç»„[TestItemGroup]
-    //ç„¶ååœ¨æ³¨å†Œç‰©å“ç»„çš„æ—¶å€™ç›´æ¥è°ƒç”¨è¿™ä¸ªå…¨å±€å˜é‡ TEST_ITEM_GROUP
-    //é‡ç‚¹è¿™ä¸ªå˜é‡çš„ç±»å‹æ˜¯ ItemGroup
-    //new çš„æ—¶å€™æ˜¯ new TestItemGroup()
-    //é‡Œé¢åŒ…å«ä¸¤ä¸ªå±æ€§ index å’Œ label
-    //index æ˜¯ç‰©å“ç»„çš„ç´¢å¼•,ç›´æ¥ä½¿ç”¨ ItemGroup.GROUPS.length å³å¯
-    //label æ˜¯ç‰©å“ç»„çš„åå­—,ç›´æ¥ä½¿ç”¨å­—ç¬¦ä¸²å³å¯,ä½†æ˜¯æ³¨æ„è¿™ä¸ªæ ‡ç­¾æœ€å¥½ç®€æ´æ˜äº†,æ–¹ä¾¿åæœŸé€šè¿‡jsonæ”¹å
+    //´´½¨ÎïÆ·×éÊ¾Àı
+    //Í¨¹ı¾²Ì¬È«¾Ö±äÁ¿ new Ò»¸öÎïÆ·×é[TestItemGroup]
+    //È»ºóÔÚ×¢²áÎïÆ·×éµÄÊ±ºòÖ±½Óµ÷ÓÃÕâ¸öÈ«¾Ö±äÁ¿ TEST_ITEM_GROUP
+    //ÖØµãÕâ¸ö±äÁ¿µÄÀàĞÍÊÇ ItemGroup
+    //new µÄÊ±ºòÊÇ new TestItemGroup()
+    //ÀïÃæ°üº¬Á½¸öÊôĞÔ index ºÍ label
+    //index ÊÇÎïÆ·×éµÄË÷Òı,Ö±½ÓÊ¹ÓÃ ItemGroup.GROUPS.length ¼´¿É
+    //label ÊÇÎïÆ·×éµÄÃû×Ö,Ö±½ÓÊ¹ÓÃ×Ö·û´®¼´¿É,µ«ÊÇ×¢ÒâÕâ¸ö±êÇ©×îºÃ¼ò½àÃ÷ÁË,·½±ãºóÆÚÍ¨¹ıjson¸ÄÃû
     //====================================================================================================
     public static final ItemGroup TEST_ITEM_GROUP = new TestItemGroup(ItemGroup.GROUPS.length,"testItemGroup") {
-        //è¿™é‡Œé‡å†™ createIcon æ–¹æ³•
-        //è¿™ä¸ªæ–¹æ³•æ˜¯åˆ›å»ºç‰©å“ç»„çš„å›¾æ ‡
-        //å¯ä»¥é€šè¿‡Itemsç±»è·å–ç‰©å“
-        //ä¹Ÿå¯ä»¥é€šè¿‡ForgeRegistries.ITEMS.getValue(new ResourceLocation("æ¨¡ç»„åç§°:ç‰©å“æ¨¡ç»„"))è·å–è‡ªå·±åˆ›å»ºçš„ç‰©å“
+        //ÕâÀïÖØĞ´ createIcon ·½·¨
+        //Õâ¸ö·½·¨ÊÇ´´½¨ÎïÆ·×éµÄÍ¼±ê
+        //¿ÉÒÔÍ¨¹ıItemsÀà»ñÈ¡ÎïÆ·
+        //Ò²¿ÉÒÔÍ¨¹ıForgeRegistries.ITEMS.getValue(new ResourceLocation("Ä£×éÃû³Æ:ÎïÆ·Ä£×é"))»ñÈ¡×Ô¼º´´½¨µÄÎïÆ·
         @Override
         public ItemStack createIcon() {
             return new ItemStack(Items.ARROW);
@@ -39,14 +39,14 @@ public abstract class TestItemGroup extends ItemGroup {
 
 
 
-    //åˆ›å»ºç‰©å“ç»„ç¤ºä¾‹
+    //´´½¨ÎïÆ·×éÊ¾Àı
     //====================================================================================================
     public static final ItemGroup TEST_TOOL_GROUP = new TestItemGroup(ItemGroup.GROUPS.length,"testToolGroup") {
 
         @Override
         public ItemStack createIcon() {
-            //è¿™é‡Œå°±ä½¿ç”¨äº†è‡ªå·±åˆ›å»ºçš„ç‰©å“æ¥ä½œä¸ºç‰©å“ç»„çš„å›¾æ ‡
-            //å³é€šè¿‡ForgeRegistries.ITEMS.getValue(new ResourceLocation("æ¨¡ç»„åç§°:ç‰©å“æ¨¡ç»„"))è·å–è‡ªå·±åˆ›å»ºçš„ç‰©å“
+            //ÕâÀï¾ÍÊ¹ÓÃÁË×Ô¼º´´½¨µÄÎïÆ·À´×÷ÎªÎïÆ·×éµÄÍ¼±ê
+            //¼´Í¨¹ıForgeRegistries.ITEMS.getValue(new ResourceLocation("Ä£×éÃû³Æ:ÎïÆ·Ä£×é"))»ñÈ¡×Ô¼º´´½¨µÄÎïÆ·
             return new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("nmod:testaxe")));
         }
     };
@@ -55,7 +55,7 @@ public abstract class TestItemGroup extends ItemGroup {
 
 
 
-    //åˆ›å»ºç‰©å“ç»„ç¤ºä¾‹
+    //´´½¨ÎïÆ·×éÊ¾Àı
     //====================================================================================================
     public static final ItemGroup TEST_BLOCK_GROUP = new TestItemGroup(ItemGroup.GROUPS.length,"testToolGroup") {
         @Override
@@ -65,8 +65,8 @@ public abstract class TestItemGroup extends ItemGroup {
     };
     //====================================================================================================
 
-    //è¿™é‡Œéœ€è¦é‡å†™æ„é€ å‡½æ•°,å› ä¸ºçˆ¶ç±»çš„æ„é€ å‡½æ•°æ˜¯ protected çš„
-    //å¦åˆ™æ— æ³•åˆ›å»ºç‰©å“ç»„
+    //ÕâÀïĞèÒªÖØĞ´¹¹Ôìº¯Êı,ÒòÎª¸¸ÀàµÄ¹¹Ôìº¯ÊıÊÇ protected µÄ
+    //·ñÔòÎŞ·¨´´½¨ÎïÆ·×é
     public TestItemGroup(int index, String label) {
         super(index, label);
     }
