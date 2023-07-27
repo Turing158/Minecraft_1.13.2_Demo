@@ -28,102 +28,102 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import javax.annotation.Nullable;
 
-//é€šè¿‡ @Mod æ³¨è§£åˆ›å»ºä¸€ä¸ªæ¨¡ç»„
-//valueï¼šæ¨¡ç»„çš„åç§°
+//Í¨¹ı @Mod ×¢½â´´½¨Ò»¸öÄ£×é
+//value£ºÄ£×éµÄÃû³Æ
 @Mod(Main.MOD_ID)
 public class Main {
 
 
-    //åˆ›å»ºä¸€ä¸ªå…¨å±€å˜é‡ MOD_ID
+    //´´½¨Ò»¸öÈ«¾Ö±äÁ¿ MOD_ID
     public static final String MOD_ID = "nmod";
 
-    //åˆ›å»ºä¸€ä¸ªæ„é€ å‡½æ•°[æ¨¡æ¿,ç›´æ¥æŠ„]
+    //´´½¨Ò»¸ö¹¹Ôìº¯Êı[Ä£°å,Ö±½Ó³­]
     public Main() {
-        //åˆ›å»ºä¸€ä¸ª äº‹ä»¶æ€»çº¿
-        //é€šè¿‡è¿™ä¸ªäº‹ä»¶æ€»çº¿æ¥æ³¨å†Œäº‹ä»¶
-        //è¿™ä¸ªäº‹ä»¶æ€»çº¿æ˜¯é€šè¿‡ FMLJavaModLoadingContext.get().getModEventBus() æ¥åˆ›å»ºçš„
+        //´´½¨Ò»¸ö ÊÂ¼ş×ÜÏß
+        //Í¨¹ıÕâ¸öÊÂ¼ş×ÜÏßÀ´×¢²áÊÂ¼ş
+        //Õâ¸öÊÂ¼ş×ÜÏßÊÇÍ¨¹ı FMLJavaModLoadingContext.get().getModEventBus() À´´´½¨µÄ
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        //é€šè¿‡è¿™ä¸ªäº‹ä»¶æ€»çº¿æ¥æ³¨å†Œäº‹ä»¶
+        //Í¨¹ıÕâ¸öÊÂ¼ş×ÜÏßÀ´×¢²áÊÂ¼ş
         bus.addListener(this::setup);
-        //è¿™é‡Œæ³¨å†Œçš„æ˜¯ä¸€ä¸ªäº‹ä»¶,è¿™ä¸ªäº‹ä»¶æ˜¯åœ¨å®¢æˆ·ç«¯åŠ è½½çš„æ—¶å€™è§¦å‘çš„äº‹ä»¶
+        //ÕâÀï×¢²áµÄÊÇÒ»¸öÊÂ¼ş,Õâ¸öÊÂ¼şÊÇÔÚ¿Í»§¶Ë¼ÓÔØµÄÊ±ºò´¥·¢µÄÊÂ¼ş
         bus.addListener(this::enqueueIMC);
-        //è¿™é‡Œæ³¨å†Œçš„æ˜¯ä¸€ä¸ªäº‹ä»¶,è¿™ä¸ªäº‹ä»¶æ˜¯åœ¨å®¢æˆ·ç«¯åŠ è½½çš„æ—¶å€™è§¦å‘çš„äº‹ä»¶
+        //ÕâÀï×¢²áµÄÊÇÒ»¸öÊÂ¼ş,Õâ¸öÊÂ¼şÊÇÔÚ¿Í»§¶Ë¼ÓÔØµÄÊ±ºò´¥·¢µÄÊÂ¼ş
         bus.addListener(this::processIMC);
-        //è¿™é‡Œæ³¨å†Œçš„æ˜¯ä¸€ä¸ªäº‹ä»¶,è¿™ä¸ªäº‹ä»¶æ˜¯åœ¨å®¢æˆ·ç«¯åŠ è½½çš„æ—¶å€™è§¦å‘çš„äº‹ä»¶
+        //ÕâÀï×¢²áµÄÊÇÒ»¸öÊÂ¼ş,Õâ¸öÊÂ¼şÊÇÔÚ¿Í»§¶Ë¼ÓÔØµÄÊ±ºò´¥·¢µÄÊÂ¼ş
         bus.addListener(this::doClientStuff);
 
-        //é€šè¿‡è¿™ä¸ªäº‹ä»¶æ€»çº¿æ¥æ³¨å†Œäº‹ä»¶
+        //Í¨¹ıÕâ¸öÊÂ¼ş×ÜÏßÀ´×¢²áÊÂ¼ş
         MinecraftForge.EVENT_BUS.register(this);
     }
 
 
-    //åˆ›å»ºä¸€ä¸ª setup æ–¹æ³•[æ¨¡æ¿,ç›´æ¥æŠ„]
-    //è¿™ä¸ªæ–¹æ³•æ˜¯åœ¨æ¨¡ç»„åŠ è½½çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+    //´´½¨Ò»¸ö setup ·½·¨[Ä£°å,Ö±½Ó³­]
+    //Õâ¸ö·½·¨ÊÇÔÚÄ£×é¼ÓÔØµÄÊ±ºò´¥·¢µÄ·½·¨
     private void setup(FMLCommonSetupEvent event) {
-        System.out.println("===========================\nå»ºç«‹MOD\n===========================");
+        System.out.println("===========================\n½¨Á¢MOD\n===========================");
         System.out.println("===========================\nSetupMOD\n===========================");
     }
 
-    //åˆ›å»ºä¸€ä¸ª doClientStuff æ–¹æ³•[æ¨¡æ¿,ç›´æ¥æŠ„]
-    //è¿™ä¸ªæ–¹æ³•æ˜¯åœ¨å®¢æˆ·ç«¯åŠ è½½çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+    //´´½¨Ò»¸ö doClientStuff ·½·¨[Ä£°å,Ö±½Ó³­]
+    //Õâ¸ö·½·¨ÊÇÔÚ¿Í»§¶Ë¼ÓÔØµÄÊ±ºò´¥·¢µÄ·½·¨
     private void doClientStuff(FMLClientSetupEvent event) {
-        System.out.println("===========================\ndoClientStuffæ–¹æ³•\n===========================");
+        System.out.println("===========================\ndoClientStuff·½·¨\n===========================");
     }
 
-    //åˆ›å»ºä¸€ä¸ª enqueueIMC æ–¹æ³•[æ¨¡æ¿,ç›´æ¥æŠ„]
-    //è¿™ä¸ªæ–¹æ³•æ˜¯åœ¨å®¢æˆ·ç«¯åŠ è½½çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+    //´´½¨Ò»¸ö enqueueIMC ·½·¨[Ä£°å,Ö±½Ó³­]
+    //Õâ¸ö·½·¨ÊÇÔÚ¿Í»§¶Ë¼ÓÔØµÄÊ±ºò´¥·¢µÄ·½·¨
     private void enqueueIMC(InterModEnqueueEvent event) {
-        System.out.println("===========================\nenqueueIMCæ–¹æ³•\n===========================");
+        System.out.println("===========================\nenqueueIMC·½·¨\n===========================");
     }
 
-    //åˆ›å»ºä¸€ä¸ª processIMC æ–¹æ³•[æ¨¡æ¿,ç›´æ¥æŠ„]
-    //è¿™ä¸ªæ–¹æ³•æ˜¯åœ¨å®¢æˆ·ç«¯åŠ è½½çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+    //´´½¨Ò»¸ö processIMC ·½·¨[Ä£°å,Ö±½Ó³­]
+    //Õâ¸ö·½·¨ÊÇÔÚ¿Í»§¶Ë¼ÓÔØµÄÊ±ºò´¥·¢µÄ·½·¨
     private void processIMC(InterModProcessEvent event) {
-        System.out.println("===========================\nprocessIMCæ–¹æ³•\n===========================");
+        System.out.println("===========================\nprocessIMC·½·¨\n===========================");
     }
 
 
-    //åˆ›å»ºä¸€ä¸ª onServerStarting æ–¹æ³•[æ¨¡æ¿,ç›´æ¥æŠ„]
-    //è¿™ä¸ªæ–¹æ³•æ˜¯åœ¨æœåŠ¡å™¨åŠ è½½çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+    //´´½¨Ò»¸ö onServerStarting ·½·¨[Ä£°å,Ö±½Ó³­]
+    //Õâ¸ö·½·¨ÊÇÔÚ·şÎñÆ÷¼ÓÔØµÄÊ±ºò´¥·¢µÄ·½·¨
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
-        System.out.println("===========================\nonServerStartingæ–¹æ³•\n===========================");
+        System.out.println("===========================\nonServerStarting·½·¨\n===========================");
     }
 
 
-    //[æ¨¡æ¿,ç›´æ¥æŠ„]
-    //åˆ›å»ºä¸€ä¸ªé™æ€å†…éƒ¨ç±» RegistryEvents
-    //è¿™ä¸ªç±»æ˜¯ç”¨æ¥æ³¨å†Œç‰©å“,æ–¹å—,å®ä½“ç­‰çš„
-    //è¿™ä¸ªç±»éœ€è¦é€šè¿‡ @Mod.EventBusSubscriber æ³¨è§£æ¥æ³¨å†Œ
-    //bus = Mod.EventBusSubscriber.Bus.MOD è¿™ä¸ªæ˜¯å›ºå®šå†™æ³•
+    //[Ä£°å,Ö±½Ó³­]
+    //´´½¨Ò»¸ö¾²Ì¬ÄÚ²¿Àà RegistryEvents
+    //Õâ¸öÀàÊÇÓÃÀ´×¢²áÎïÆ·,·½¿é,ÊµÌåµÈµÄ
+    //Õâ¸öÀàĞèÒªÍ¨¹ı @Mod.EventBusSubscriber ×¢½âÀ´×¢²á
+    //bus = Mod.EventBusSubscriber.Bus.MOD Õâ¸öÊÇ¹Ì¶¨Ğ´·¨
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
 
-        //è¿™ä¸ªä¸ºäº†æ–¹ä¾¿æ–¹å—æ³¨å†Œæˆç‰©å“æ”¾å…¥ç‰©å“æ 
+        //Õâ¸öÎªÁË·½±ã·½¿é×¢²á³ÉÎïÆ··ÅÈëÎïÆ·À¸
         public static TestBlock testBlock = new TestBlock();
 
 
-        //åˆ›å»ºä¸€ä¸ª onBlocksRegistry æ–¹æ³•[æ¨¡æ¿,ç›´æ¥æŠ„]
-        //è¿™ä¸ªæ–¹æ³•æ˜¯åœ¨æ³¨å†Œæ–¹å—çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+        //´´½¨Ò»¸ö onBlocksRegistry ·½·¨[Ä£°å,Ö±½Ó³­]
+        //Õâ¸ö·½·¨ÊÇÔÚ×¢²á·½¿éµÄÊ±ºò´¥·¢µÄ·½·¨
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegister) {
-            IForgeRegistry<Block> registry = blockRegister.getRegistry();//[æ¨¡æ¿,ç›´æ¥æŠ„]
-            registry.register(testBlock);//æ³¨å†Œæ–¹å—
+            IForgeRegistry<Block> registry = blockRegister.getRegistry();//[Ä£°å,Ö±½Ó³­]
+            registry.register(testBlock);//×¢²á·½¿é
         }
 
 
 
-        //åˆ›å»ºä¸€ä¸ª onItemsRegistry æ–¹æ³•[æ¨¡æ¿,ç›´æ¥æŠ„]
-        //è¿™ä¸ªæ–¹æ³•æ˜¯åœ¨æ³¨å†Œç‰©å“çš„æ—¶å€™è§¦å‘çš„æ–¹æ³•
+        //´´½¨Ò»¸ö onItemsRegistry ·½·¨[Ä£°å,Ö±½Ó³­]
+        //Õâ¸ö·½·¨ÊÇÔÚ×¢²áÎïÆ·µÄÊ±ºò´¥·¢µÄ·½·¨
         @SubscribeEvent
         public static void onBItemRegistry(final RegistryEvent.Register<Item> itemRegister) {
-            IForgeRegistry<Item> registry = itemRegister.getRegistry();//[æ¨¡æ¿,ç›´æ¥æŠ„]
-            registry.registerAll(new Test());//æ³¨å†Œç‰©å“
-            registry.registerAll(new TestSword(),new TestAxe(),new TestHoe(),new TestShovel(),new TestPickaxe());//æ³¨å†Œå·¥å…·
-            registry.registerAll(new ItemBlock(testBlock,new Item.Properties().group(TestItemGroup.TEST_BLOCK_GROUP)).setRegistryName(TestBlock.NAME));//æ³¨å†Œæ–¹å—
+            IForgeRegistry<Item> registry = itemRegister.getRegistry();//[Ä£°å,Ö±½Ó³­]
+            registry.registerAll(new Test());//×¢²áÎïÆ·
+            registry.registerAll(new TestSword(),new TestAxe(),new TestHoe(),new TestShovel(),new TestPickaxe());//×¢²á¹¤¾ß
+            registry.registerAll(new ItemBlock(testBlock,new Item.Properties().group(TestItemGroup.TEST_BLOCK_GROUP)).setRegistryName(TestBlock.NAME));//×¢²á·½¿é
         }
 
-        //[æœªå®Œæˆ,å‹¿æŠ„]
+        //[Î´Íê³É,Îğ³­]
         @SubscribeEvent
         public static void registerRenderers(ModelRegistryEvent event) {
             RenderingRegistry.registerEntityRenderingHandler(EntityTool.class, manager -> new RenderLiving(manager, new TestEntity(), 0.5f) {
