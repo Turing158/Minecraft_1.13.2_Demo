@@ -16,19 +16,19 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-//åˆ›å»ºæ–¹å—ç¤ºä¾‹
-//ç»§æ‰¿Blockç±»
+//´´½¨·½¿éÊ¾Àı
+//¼Ì³ĞBlockÀà
 public class TestBlock extends Block {
-    //è®¾ç½®æ–¹å—å…¨å±€å˜é‡å[æ–¹ä¾¿æ·»åŠ ç‰©å“]
+    //ÉèÖÃ·½¿éÈ«¾Ö±äÁ¿Ãû[·½±ãÌí¼ÓÎïÆ·]
     public static final String NAME = "nmod:testblock";
-    //æ„é€ å‡½æ•°
+    //¹¹Ôìº¯Êı
     public TestBlock(){
-        //è°ƒç”¨çˆ¶ç±»æ„é€ å‡½æ•°
-        super(Properties.create(Material.WOOD)//è®¾ç½®æ–¹å—æè´¨[ä¸æ˜¯çº¹ç†æè´¨]
-                .hardnessAndResistance(1.0f)//è®¾ç½®ç¡¬åº¦å’ŒæŠ—çˆ†
-                .lightValue(14)//è®¾ç½®äº®åº¦
+        //µ÷ÓÃ¸¸Àà¹¹Ôìº¯Êı
+        super(Properties.create(Material.WOOD)//ÉèÖÃ·½¿é²ÄÖÊ[²»ÊÇÎÆÀí²ÄÖÊ]
+                .hardnessAndResistance(1.0f)//ÉèÖÃÓ²¶ÈºÍ¿¹±¬
+                .lightValue(14)//ÉèÖÃÁÁ¶È
         );
-        setRegistryName(NAME);//è®¾ç½®æ–¹å—æ³¨å†Œå
+        setRegistryName(NAME);//ÉèÖÃ·½¿é×¢²áÃû
     }
 
 }
