@@ -3,18 +3,18 @@ package com.starfall.nmod.util;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
-//åˆ›å»ºå·¥å…·å±æ€§ç±»
-//ç»§æ‰¿ IItemTier æ¥å£
-//è¿™ä¸ªç±»çš„ä½œç”¨æ˜¯è®¾ç½®å·¥å…·çš„å±æ€§
+//´´½¨¹¤¾ßÊôĞÔÀà
+//¼Ì³Ğ IItemTier ½Ó¿Ú
+//Õâ¸öÀàµÄ×÷ÓÃÊÇÉèÖÃ¹¤¾ßµÄÊôĞÔ
 public class TierTool implements IItemTier {
-    int maxUses;//æœ€å¤§ä½¿ç”¨æ¬¡æ•°
-    float efficiency;//æ•ˆç‡
-    float attackDamage;//æ”»å‡»ä¼¤å®³
-    int harvestLevel;//æ”¶å‰²ç­‰çº§
-    int enchantability;//é™„é­”ç­‰çº§
-    Ingredient repairMaterial;//ä¿®å¤ææ–™
+    int maxUses;//×î´óÊ¹ÓÃ´ÎÊı
+    float efficiency;//Ğ§ÂÊ
+    float attackDamage;//¹¥»÷ÉËº¦
+    int harvestLevel;//ÊÕ¸îµÈ¼¶
+    int enchantability;//¸½Ä§µÈ¼¶
+    Ingredient repairMaterial;//ĞŞ¸´²ÄÁÏ
 
-    //å‰©ä¸‹çš„éƒ½æ˜¯æ„é€ å‡½æ•°å’Œget/setæ–¹æ³•
+    //Ê£ÏÂµÄ¶¼ÊÇ¹¹Ôìº¯ÊıºÍget/set·½·¨
     public TierTool(int maxUses, float efficiency, float attackDamage, int harvestLevel, int enchantability, Ingredient repairMaterial) {
         this.maxUses = maxUses;
         this.efficiency = efficiency;
